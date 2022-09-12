@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clock</title>
+    <link rel="icon" href="/WebDev/03_JavaScript/HTML5_badge.png">
+    <link rel="stylesheet" href="clock.css" type="text/css">
+
+
+</head>
+
+<body>
+    <h1>The Digital Clock</h1>
+
+    <div class="time">
+        <span id="time"></span>
+    </div>
+
+    <div class="date">
+        <h4>Today is :</h4>
+        <span id="date"></span>
+       
+    </div>
+    <p>
+       <button class="button"> <a class="link" href="https://www.timeanddate.com/worldclock/" role="button" style="text-decoration: none  ; ">See the time of other countries</a></button>
+    </p>
+
+
+    <script>
+
+        setInterval(() => {
+            a = new Date();
+            let time1 = (a.getHours()-12) + " : " + a.getMinutes() + " : " + a.getSeconds();
+            let date = a.getDate() + "-" +(a.getMonth() + 1) + "-" +  a.getFullYear();
+            document.getElementById('time').innerHTML = time1;
+            document.getElementById('date').innerHTML = date;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
